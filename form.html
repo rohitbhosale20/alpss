@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+              <form id="contactForm" class="form-left">
+                <h2 class="headline-1 text-center">Contact US</h2>
+                <p class="form-text text-center">
+                  Call AT <a href="tel:+88123123456" class="link">+88-123-123456</a>
+                  or fill out the form
+                </p>
+                <div class="input-wrapper">
+                  <input type="text" name="name" placeholder="Your Name" autocomplete="off" class="input-field">
+                  <input type="email" name="email" placeholder="Email" autocomplete="off" class="input-field">
+                </div>
+                <div class="input-wrapper">
+                  <div class="icon-wrapper">
+                    <ion-icon name="briefcase-outline" aria-hidden="true"></ion-icon>
+                    <select name="person" class="input-field">
+                      <option value="">Services</option>
+                      <option value="1-person">Marketing/SEO</option>
+                      <option value="2-person">Design Development</option>
+                      <option value="3-person">Hosting</option>
+                      <option value="4-person">All</option>
+                    </select>
+                    <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
+                  </div>
+                </div>
+                <div class="input-wrapper">
+                  <input type="text" name="company" placeholder="Business Name" autocomplete="off" class="input-field">
+                  <input type="tel" name="phone" placeholder="Phone Number" autocomplete="off" class="input-field">
+                </div>
+                <textarea name="message" placeholder="Message" autocomplete="off" class="input-field"></textarea>
+                <button type="submit" class="btn btn-secondary">
+                  <span class="text text-1">Submit</span>
+                  <span class="text text-2" aria-hidden="true">Submit</span>
+                </button>
+                <!-- Message container -->
+                <div id="formMessage" class="form-message"></div>
+              </form>
+
+
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const formData = new FormData(this);
+        const params = new URLSearchParams();
+
+        formData.forEach((value, key) => {
+            params.append(key, value);
+        });
+
+        fetch('https://agilesprint.kesug.com/rohit/?' + params.toString(), {
+            method: 'GET',  // Use 'GET' request
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json(); // Expect JSON response
+        })
+        .then(result => {
+            document.getElementById('formMessage').innerHTML = '<p class="success-message">We will reach you soon!</p>';
+            console.log('Response:', result);
+        })
+        .catch(error => {
+            document.getElementById('formMessage').innerHTML = '<p class="error-message">There was an error sending the message. Please try again.</p>';
+            console.error('Error:', error);
+        });
+    });
+</script>
+</body>
+</html>
