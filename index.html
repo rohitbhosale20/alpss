@@ -54,6 +54,57 @@
 
 </style>
 
+  <style type="text/css">
+  .clients-section {
+    padding: 5px;
+    background-color: black;
+    text-align: center;
+  }
+
+  .clients-slider {
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+  }
+
+  .client-item {
+    flex: 1 0 auto;
+    width: 100%;
+    max-width: 200px; /* Default max-width */
+    margin: 0 10px; /* Spacing between images */
+  }
+
+  .client-item img {
+    width: 100%; /* Full width of the container */
+    height: auto;
+    display: block;
+  }
+
+  /* Responsive styles for tablets and larger screens */
+  @media (min-width: 769px) {
+    .client-item {
+      max-width: 250px; /* Increase max-width for larger screens */
+    }
+  }
+
+  /* Responsive styles for mobile devices */
+  @media (max-width: 768px) {
+    .client-item {
+      max-width: 150px; /* Adjust for smaller screens */
+      margin: 0 5px;
+    }
+  }
+
+  /* Additional styles for very small devices (e.g., mobile phones) */
+  @media (max-width: 480px) {
+    .client-item {
+      max-width: 120px; /* Further adjust for very small screens */
+      margin: 0 2px; /* Reduce margin */
+    }
+  }
+
+</style>
+
 
 </head>
 
@@ -312,7 +363,38 @@
       </section>
 
 
-
+<section id="clients" class="clients-section">
+    <div class="container">
+        <h2>Our Clients</h2>
+        <div class="clients-slider">
+            <div class="client-item">
+                <a href="https://www.saracommers.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/images/sara-commerce.png" alt="sara-commerce">
+                </a>
+            </div>
+            <div class="client-item">
+                <a href="https://shwash.co" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/images/swasch.png" alt="swasch">
+                </a>
+            </div>
+            <div class="client-item">
+                <a href="https://www.mesaverde.net.au/" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/images/mesaverde.png" alt="mesaverde">
+                </a>
+            </div>
+            <div class="client-item">
+                <a href="https://jewelrydepot.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/images/jd-logo.svg" alt="Client">
+                </a>
+            </div>
+            <div class="client-item">
+                <a href="https://vidarboutique.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/images/vidarboutique.jpg" alt="Client 3">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
 
       <!-- 
