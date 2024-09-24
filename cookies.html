@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+<title>ALPS Software - Comprehensive IT Solutions for Your Business</title>
+<meta name="description" content="ALPS Software provides top-notch website design, development, SEO, marketing, and hosting solutions tailored for B2B companies. Transform your online presence with our expert services.">
+<meta name="keywords" content="ALPS Software, IT Solutions, Website Design, Web Development, SEO Services, Digital Marketing, B2B Lead Generation, Cloud Hosting, PHP, Node.js, Angular, Flutter">
+<meta name="author" content="ALPS Software">
+<meta property="og:title" content="ALPS Software - Comprehensive IT Solutions for Your Business">
+<meta property="og:description" content="Transform your online presence with ALPS Software. We offer expert website design, development, SEO, and marketing services.">
+<!-- <meta property="og:image" content="URL_to_your_image.jpg"> -->
+<meta property="og:url" content="https://www.alpssoftware.digital">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/seo.jpg">
+  <link rel="preload" as="image" href="./assets/images/office.jpg">
+  <link rel="preload" as="image" href="./assets/images/markeitng.jpg">
+
+<style type="text/css">
+  .form-message {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.success-message {
+  color: green;
+}
+
+.error-message {
+  color: red;
+}
+
+</style>
+
+  <style type="text/css">
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #000000; /* Black background for header */
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    max-width: 180px;
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .logo {
+        max-width: 140px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        max-width: 120px;
+    }
+}
+
+/* Privacy Policy Container */
+.cookies-policy-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #ffffff; /* White background for privacy policy section */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #000000; /* Black color for main heading */
+}
+
+h2 {
+    color: #ff0000; /* Red color for subhea dings */
+    margin-top: 20px;
+}
+
+p {
+    line-height: 1.6;
+    color: #666666; /* Dark grey for text content */
+}
+li {
+    line-height: 1.6;
+    color: #666666; /* Dark grey for text content */
+}
+
+/* Links */
+a {
+    color: #ff0000; /* Red color for links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+.body-001{
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    position: relative;
+    /*min-height: 100vh;*/
+}
+.cookie-banner {
+    background-color: black; /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    position: fixed; /* Stay fixed at the bottom */
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 999; /* Ensure it stays above all other content */
+}
+
+.cookie-text {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.cookie-link {
+    color: red;
+    text-decoration: none;
+}
+
+.cookie-link:hover {
+    text-decoration: underline;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.accept-btn, .manage-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.accept-btn:hover, .manage-btn:hover {
+    background-color: #ff4d4d;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .cookie-banner {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .cookie-text {
+        font-size: 13px;
+    }
+
+    .accept-btn, .manage-btn {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+}
+
+
+@media (min-width: 769px) {
+    .cookie-banner {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .cookie-text {
+        font-size: 13px;
+    }
+
+    .accept-btn, .manage-btn {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+  }
+
+  /* Responsive styles for mobile devices */
+  @media (max-width: 768px) {
+     .cookie-banner {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .cookie-text {
+        font-size: 13px;
+    }
+
+    .accept-btn, .manage-btn {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+  }
+
+  /* Additional styles for very small devices (e.g., mobile phones) */
+  @media (max-width: 480px) {
+     .cookie-banner {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .cookie-text {
+        font-size: 13px;
+    }
+
+    .accept-btn, .manage-btn {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+  }
+
+</style>
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0HGB50M157"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'G-0HGB50M157');
+    </script>
+
+  
+
+</head>
+
+<body id="top" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+
+  <!-- 
+    - #PRELOADER
+  -->
+
+  <div class="preload" data-preaload>
+    <div class="circle"></div>
+    <p class="text">ALPS</p>
+  </div>
+
+<div class="body-001">
+<div class="cookie-banner" id="cookiePolicy" style="display: none;">
+    <p class="cookie-text">We use cookies to improve your browsing experience, serve personalized content, and analyze our traffic.
+        By clicking Accept all Cookies, you agree to the storing of cookies on your device.
+        You can customize your settings by clicking Manage Preferences. For more details, see our 
+        <a href="#" class="cookie-link">Cookie Policy</a>.
+    </p>
+    <div class="cookie-buttons">
+        <button class="accept-btn" onclick="acceptCookies()">Accept all Cookies</button>
+        <!-- <button class="manage-btn">Manage Preferences</button> -->
+    </div>
+    <button class="close-btn" onclick="document.getElementById('cookiePolicy').style.display='none';">&times;</button>
+</div>
+</div>
+
+
+
+<header>
+        <div class="header-container">
+            <a href="index.html">
+                <img src="./assets/images/alps-logo-original.svg" alt="Company Logo" class="logo">
+            </a>
+        </div>
+    </header>
+
+<div class="cookies-policy-container">
+        <h1>Cookies Policy for Alps Software Solutions</h1>
+        <p>Effective Date: December 25, 2024</p>
+
+        <h2>Introduction</h2>
+        <p>At Alps Software Solutions, we use cookies and similar tracking technologies on our website <a href="https://alpssoftware.digital">alpssoftware.digital</a> to enhance your user experience, analyze site traffic, and improve our services. This Cookies Policy explains what cookies are, how we use them, and how you can manage your cookie preferences.</p>
+
+        <h2>What Are Cookies?</h2>
+        <p>Cookies are small text files placed on your device when you visit a website. They help websites recognize your device, remember your preferences, and track your interactions to improve functionality and content delivery. Some cookies are necessary for the website to function, while others are used for analytics and advertising purposes.</p>
+
+        <h2>Types of Cookies We Use</h2>
+        <h3>Essential Cookies</h3>
+        <p>These cookies are crucial for the operation of our website. Without these cookies, parts of our site may not function properly. They are typically used to enable essential services such as page navigation and secure access to certain areas.</p>
+
+        <h3>Performance and Analytics Cookies</h3>
+        <p>We use these cookies to analyze how visitors use our website, monitor traffic, and track user behavior. These cookies allow us to measure and improve website performance. For example, we may use Google Analytics to collect aggregated information about how our website is used.</p>
+
+        <h3>Functionality Cookies</h3>
+        <p>Functionality cookies allow the website to remember choices you make, such as language preferences or login information, to provide a more personalized experience.</p>
+
+        <h3>Advertising and Targeting Cookies</h3>
+        <p>These cookies are used to deliver relevant advertisements to you based on your browsing behavior and interests. They may be set by us or by third-party partners to help deliver ads that are more relevant to you.</p>
+
+        <h3>Third-Party Cookies</h3>
+        <p>We may also allow third-party service providers, such as Google Analytics or social media platforms, to place cookies on your device for analytical, functional, or advertising purposes. These third-party services have their own privacy and cookies policies, which you can review.</p>
+
+        <h2>Why We Use Cookies</h2>
+        <p>We use cookies to:</p>
+        <ul>
+            <li>Ensure the website functions properly</li>
+            <li>Enhance user experience by remembering your preferences</li>
+            <li>Analyze website traffic and user behavior to improve our services</li>
+            <li>Provide targeted marketing and relevant content</li>
+            <li>Track conversions for ads</li>
+        </ul>
+
+        <h2>Managing Cookies Preferences</h2>
+        <p>You have the right to control and manage cookies used on our website. You can modify your browser settings to accept or block cookies or delete existing cookies from your device. However, please note that disabling certain cookies may affect the functionality of our website.</p>
+        <p>For more detailed guidance on how to manage cookies, visit your browser’s help section:</p>
+        <ul>
+            <li><a href="https://support.google.com/chrome/answer/95647?hl=en" target="_blank">Google Chrome</a></li>
+            <li><a href="https://support.mozilla.org/en-US/kb/delete-cookies-remove-info-websites-stored" target="_blank">Mozilla Firefox</a></li>
+            <li><a href="https://support.apple.com/en-us/HT201265" target="_blank">Safari</a></li>
+            <li><a href="https://support.microsoft.com/en-us/help/278835/how-to-delete-cookie-files-in-internet-explorer" target="_blank">Microsoft Edge</a></li>
+        </ul>
+
+        <h2>Changes to Our Cookies Policy</h2>
+        <p>We may update this Cookies Policy from time to time to reflect changes in technology or legal requirements. Any updates will be posted on this page, and the "Effective Date" at the top will be revised accordingly.</p>
+
+        <h2>Contact Us</h2>
+        <p>If you have any questions or concerns about this Cookies Policy or our use of cookies, please contact us at:</p>
+        <p>Alps Software Solutions</p>
+        <p>5900 Balcones Drive, Austin, TX 78731</p>
+        <p>Email: <a href="mailto:contact@alpssoftware.digital">contact@alpssoftware.digital</a></p>
+        <p>Phone: +14439988726</p>
+        <p>Website: <a href="https://alpssoftware.digital">https://alpssoftware.digital</a></p>
+    </div>
+
+  <footer class="footer section has-bg-image text-center"
+    style="background-image: url('./assets/images/world.jpg')">
+    <div class="container">
+
+      <div class="footer-top grid-list">
+
+        <div class="footer-brand has-before has-after">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/alps-logo-original.svg" width="100" height="50" loading="lazy" alt="grilli home">
+          </a>
+
+          <address class="body-4">
+            5900 Balcones Drive Austin,TX 78731
+          </address>
+
+          <a href="mailto:contact@alpssoftware.digital" class="body-4 contact-link">contact@alpssoftware.digital</a>
+
+          <a href="tel:+14439988726" class="body-4 contact-link">Call at : +14439988726</a>
+
+
+          <div class="wrapper">
+            <div class="separator"></div>
+            <div class="separator"></div>
+            <div class="separator"></div>
+          </div>
+
+          <p class="title-1">Subscribe</p>
+
+          <p class="label-1">
+            Get <span class="span">updates.</span>
+          </p>
+
+          <form action="" class="input-wrapper">
+            <div class="icon-wrapper">
+              <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+
+              <input type="email" name="email_address" placeholder="Your email" autocomplete="off" class="input-field">
+            </div>
+
+            <button type="submit" class="btn btn-secondary">
+              <span class="text text-1">Subscribe</span>
+
+              <span class="text text-2" aria-hidden="true">Subscribe</span>
+            </button>
+          </form>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Blog</a>
+          </li>
+
+          <li>
+            <a href="/clients" class="label-2 footer-link hover-underline">Clients</a>
+          </li>
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Resources</a>
+          </li>
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Join Our Community</a>
+          </li>
+
+          <li>
+            <a href="/privacy-policy" class="label-2 footer-link hover-underline">Privacy</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <a href="https://www.instagram.com/alpssoftware4u/" class="label-2 footer-link hover-underline">Facebook</a>
+          </li>
+
+          <li>
+            <a href="https://www.instagram.com/alpssoftware4u/" class="label-2 footer-link hover-underline">Instagram</a>
+          </li>
+
+          <li>
+            <a href="https://www.linkedin.com/company/alpssoftwares/" class="label-2 footer-link hover-underline">Linkedin</a>
+          </li>
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Youtube</a>
+          </li>
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Google Map</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <p class="copyright">
+          &copy; 2024 ALPS. All Rights Reserved
+        </p>
+
+      </div>
+
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn active" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const formData = new FormData(this);
+        const params = new URLSearchParams();
+
+        formData.forEach((value, key) => {
+            params.append(key, value);
+        });
+
+        fetch('https://agilesprint.kesug.com/rohit/?' + params.toString(), {
+            method: 'GET',  // Use 'GET' request
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json(); // Expect JSON response
+        })
+        .then(result => {
+            document.getElementById('formMessage').innerHTML = '<p class="success-message">We will reach you soon!</p>';
+            console.log('Response:', result);
+        })
+        .catch(error => {
+            document.getElementById('formMessage').innerHTML = '<p class="error-message">There was an error sending the message. Please try again.</p>';
+            console.error('Error:', error);
+        });
+    });
+</script>
+
+<script>
+    function setCookie(name, value, days) {
+        let expires = "";
+        if (days) {
+            let date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+        let nameEQ = name + "=";
+        let ca = document.cookie.split(';');
+        for(let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    function acceptCookies() {
+        console.log("Cookie consent given");
+        setCookie('cookieConsent', 'true', 365);
+        document.getElementById('cookiePolicy').style.display = 'none';
+    }
+
+    // Check if the cookieConsent cookie is set; if not, show the banner
+    if (getCookie('cookieConsent') !== 'true') {
+        document.getElementById('cookiePolicy').style.display = 'block';
+    }
+</script>
+
+
+
+</body>
+
+</html>
