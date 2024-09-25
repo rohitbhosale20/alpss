@@ -1,9 +1,1243 @@
-<form action="http://vpcaws.10001mb.com/index.php" method="POST">
-   <label for="name">Name:</label>
-   <input type="text" id="name" name="name" required>
-   
-   <label for="email">Email:</label>
-   <input type="email" id="email" name="email" required>
-   
-   <button type="submit">Submit</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+<title>ALPS Software - Comprehensive IT Solutions for Your Business</title>
+<meta name="description" content="ALPS Software provides top-notch website design, development, SEO, marketing, and hosting solutions tailored for B2B companies. Transform your online presence with our expert services.">
+<meta name="keywords" content="ALPS Software, IT Solutions, Website Design, Web Development, SEO Services, Digital Marketing, B2B Lead Generation, Cloud Hosting, PHP, Node.js, Angular, Flutter">
+<meta name="author" content="ALPS Software">
+<meta property="og:title" content="ALPS Software - Comprehensive IT Solutions for Your Business">
+<meta property="og:description" content="Transform your online presence with ALPS Software. We offer expert website design, development, SEO, and marketing services.">
+<!-- <meta property="og:image" content="URL_to_your_image.jpg"> -->
+<meta property="og:url" content="https://www.alpssoftware.digital">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/seo.jpg">
+  <link rel="preload" as="image" href="./assets/images/office.jpg">
+  <link rel="preload" as="image" href="./assets/images/markeitng.jpg">
+
+<style type="text/css">
+  .form-message {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.success-message {
+  color: green;
+}
+
+.error-message {
+  color: red;
+}
+
+</style>
+
+  <style type="text/css">
+  .clients-section {
+    padding: 5px;
+    background-color: black;
+    text-align: center;
+  }
+
+  .clients-slider {
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+  }
+
+  .client-item {
+    flex: 1 0 auto;
+    width: 100%;
+    max-width: 200px; /* Default max-width */
+    margin: 0 10px; /* Spacing between images */
+  }
+
+  .client-item img {
+    width: 100%; /* Full width of the container */
+    height: auto;
+    display: block;
+  }
+
+  /* Responsive styles for tablets and larger screens */
+  @media (min-width: 769px) {
+    .client-item {
+      max-width: 250px; /* Increase max-width for larger screens */
+    }
+  }
+
+  /* Responsive styles for mobile devices */
+  @media (max-width: 768px) {
+    .client-item {
+      max-width: 150px; /* Adjust for smaller screens */
+      margin: 0 5px;
+    }
+  }
+
+  /* Additional styles for very small devices (e.g., mobile phones) */
+  @media (max-width: 480px) {
+    .client-item {
+      max-width: 120px; /* Further adjust for very small screens */
+      margin: 0 2px; /* Reduce margin */
+    }
+  }
+
+.body-001{
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    position: relative;
+    /*min-height: 100vh;*/
+}
+.cookie-banner {
+    background-color: black; /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    position: fixed; /* Stay fixed at the bottom */
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 999; /* Ensure it stays above all other content */
+}
+
+.cookie-text {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.cookie-link {
+    color: red;
+    text-decoration: none;
+}
+
+.cookie-link:hover {
+    text-decoration: underline;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.accept-btn, .manage-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.accept-btn:hover, .manage-btn:hover {
+    background-color: #ff4d4d;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .cookie-banner {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .cookie-text {
+        font-size: 13px;
+    }
+
+    .accept-btn, .manage-btn {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+}
+
+
+@media (min-width: 769px) {
+    .cookie-banner {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .cookie-text {
+        font-size: 13px;
+    }
+
+    .accept-btn, .manage-btn {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+  }
+
+  /* Responsive styles for mobile devices */
+  @media (max-width: 768px) {
+     .cookie-banner {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .cookie-text {
+        font-size: 13px;
+    }
+
+    .accept-btn, .manage-btn {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+  }
+
+  /* Additional styles for very small devices (e.g., mobile phones) */
+  @media (max-width: 480px) {
+     .cookie-banner {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .cookie-text {
+        font-size: 13px;
+    }
+
+    .accept-btn, .manage-btn {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+  }
+
+</style>
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0HGB50M157"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'G-0HGB50M157');
+    </script>
+
+  
+
+</head>
+
+<body id="top" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+
+  <!-- 
+    - #PRELOADER
+  -->
+
+  <div class="preload" data-preaload>
+    <div class="circle"></div>
+    <p class="text">ALPS</p>
+  </div>
+
+<div class="body-001">
+<div class="cookie-banner" id="cookiePolicy" style="display: none;">
+    <p class="cookie-text">We use cookies to improve your browsing experience, serve personalized content, and analyze our traffic.
+        By clicking Accept all Cookies, you agree to the storing of cookies on your device.
+        You can customize your settings by clicking Manage Preferences. For more details, see our 
+        <a href="/cookies" class="cookie-link">Cookie Policy</a>.
+    </p>
+    <div class="cookie-buttons">
+        <button class="accept-btn" onclick="acceptCookies()">Accept all Cookies</button>
+        <!-- <button class="manage-btn">Manage Preferences</button> -->
+    </div>
+    <button class="close-btn" onclick="document.getElementById('cookiePolicy').style.display='none';">&times;</button>
+</div>
+</div>
+
+
+
+  <!-- 
+    - #TOP BAR
+  -->
+
+  <div class="topbar">
+    <div class="container">
+
+      <address class="topbar-item">
+        <div class="icon">
+          <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+        </div>
+
+        <span class="span">
+          5900 Balcones Drive Austin,TX 78731
+        </span>
+      </address>
+
+      <a href="tel:+14439988726" class="topbar-item link">
+        <div class="icon">
+          <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+        </div>
+
+        <span class="span">+14439988726</span>
+      </a>
+
+
+      <a href="mailto:contact@alpssoftware.digital" class="topbar-item link">
+        <div class="icon">
+          <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+        </div>
+
+        <span class="span">contact@alpssoftware.digital</span>
+      </a>
+
+    </div>
+  </div>
+
+
+
+
+
+  <!-- 
+    - #HEADER
+  -->
+
+    <header class="header" data-header>
+      <div class="container">
+
+        <a href="#" class="logo">
+          <img src="./assets/images/alps-logo-original.svg" width="100" height="50" alt="ALPS - Home">
+        </a>
+
+        <nav class="navbar" data-navbar>
+
+          <button class="close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+
+          <a href="#" class="logo">
+            <img src="./assets/images/alps-logo-original.svg" width="100" height="50" alt="ALPS - Home">
+          </a>
+
+          <ul class="navbar-list">
+
+            <li class="navbar-item">
+              <a href="#home" class="navbar-link hover-underline active">
+                <div class="separator"></div>
+
+                <span class="span">Home</span>
+              </a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="#service" class="navbar-link hover-underline">
+                <div class="separator"></div>
+
+                <span class="span">Services</span>
+              </a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="#about" class="navbar-link hover-underline">
+                <div class="separator"></div>
+
+                <span class="span">About Us</span>
+              </a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="/clients" class="navbar-link hover-underline">
+                <div class="separator"></div>
+
+                <span class="span">Our Clients</span>
+              </a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="#contact" class="navbar-link hover-underline">
+                <div class="separator"></div>
+
+                <span class="span">Contact</span>
+              </a>
+            </li>
+
+          </ul>
+
+          <div class="text-center">
+            <a href="mailto:contact@alpssoftware.digital" class="body-4 sidebar-link">contact@alpssoftware.digital</a>
+
+            <div class="separator"></div>
+          </div>
+
+        </nav>
+
+        <a href="#" class="btn btn-secondary">
+          <span class="text text-1">Login</span>
+
+          <span class="text text-2" aria-hidden="true">Login</span>
+        </a>
+
+        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+        </button>
+
+        <div class="overlay" data-nav-toggler data-overlay></div>
+
+      </div>
+    </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="hero text-center" aria-label="home" id="home">
+
+        <ul class="hero-slider" data-hero-slider>
+
+          <li class="slider-item active" data-hero-slider-item>
+
+            <div class="slider-bg">
+              <img src="./assets/images/seo.jpg" width="1880" height="950" alt="" class="img-cover">
+            </div>
+
+            <p class="label-2 section-subtitle slider-reveal">Digital Masterpieces</p>
+
+            <h1 class="display-1 hero-title slider-reveal">
+              Crafting Masterpieces <br>
+              Your Vision, Our Code
+            </h1>
+
+            <p class="body-2 hero-text slider-reveal">
+              High Impact, Low Cost: Proven Expertise for Your Success
+            </p>
+
+            <a href="#" class="btn btn-primary slider-reveal">
+              <span class="text text-1">Explore More</span>
+
+              <span class="text text-2" aria-hidden="true">Explore More</span>
+            </a>
+
+          </li>
+
+          <li class="slider-item" data-hero-slider-item>
+
+            <div class="slider-bg">
+              <img src="./assets/images/office.jpg" width="1880" height="950" alt="" class="img-cover">
+            </div>
+
+            <p class="label-2 section-subtitle slider-reveal">hosting & more</p>
+
+            <h1 class="display-1 hero-title slider-reveal">
+              Beyond Hosting <br>
+              Flawless Online Solutions
+            </h1>
+
+            <p class="body-2 hero-text slider-reveal">
+              Top-Tier Solutions: Serving Clients Across the Globe
+            </p>
+
+            <a href="https://alpssoftware.digital/services/" class="btn btn-primary slider-reveal">
+              <span class="text text-1">Explore More</span>
+
+              <span class="text text-2" aria-hidden="true">Explore More</span>
+            </a>
+
+          </li>
+
+          <li class="slider-item" data-hero-slider-item>
+
+            <div class="slider-bg">
+              <img src="./assets/images/marketing.jpg" width="1880" height="950" alt="" class="img-cover">
+            </div>
+
+            <p class="label-2 section-subtitle slider-reveal">seo & marketing</p>
+
+            <h1 class="display-1 hero-title slider-reveal">
+              Smart SEO<br>
+              Transform Clicks into Customers
+            </h1>
+
+            <p class="body-2 hero-text slider-reveal">
+              Exceptional Results, Minimal Costs: Serving 20+ Clients with Excellence
+            </p>
+
+            <a href="https://alpssoftware.digital/services/" class="btn btn-primary slider-reveal">
+              <span class="text text-1">Explore More</span>
+
+              <span class="text text-2" aria-hidden="true">Explore More</span>
+            </a>
+
+          </li>
+
+        </ul>
+
+        <button class="slider-btn prev" aria-label="slide to previous" data-prev-btn>
+          <ion-icon name="chevron-back"></ion-icon>
+        </button>
+
+        <button class="slider-btn next" aria-label="slide to next" data-next-btn>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </button>
+
+        <a href="https://alpssoftware.digital/#contact" class="hero-btn has-after">
+          <img src="./assets/images/request-quote.svg" width="48" height="48" alt="booking icon">
+
+          <span class="label-2 text-center span">Get A Quote</span>
+        </a>
+
+      </section>
+
+
+
+
+
+      <!-- 
+        - #SERVICE
+      -->
+
+      <section class="section service bg-black-10 text-center" aria-label="service" id="service">
+        <div class="container">
+
+          <p class="section-subtitle label-2">Everyone Can Afford</p>
+
+          <h2 class="headline-1 section-title">We Offer Top Notch</h2>
+
+          <p class="section-text">
+            Offering top-tier solutions with proven expertise: High impact, low cost, serving clients globally with
+            excellence.
+          </p>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="service-card">
+
+                <a href="https://alpssoftware.digital/services/" class="has-before hover:shine">
+                  <figure class="card-banner img-holder" style="--width: 285; --height: 336;">
+                    <img src="./assets/images/seo.png" width="285" height="336" loading="lazy" alt="seo"
+                      class="img-cover">
+                  </figure>
+                </a>
+
+                <div class="card-content">
+
+                  <h3 class="title-4 card-title">
+                    <a href="https://alpssoftware.digital/services/">Marketing & SEO</a>
+                  </h3>
+
+                  <a href="https://alpssoftware.digital/services/" class="btn-text hover-underline label-2">Explore More</a>
+
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <a href="https://alpssoftware.digital/services/" class="has-before hover:shine">
+                  <figure class="card-banner img-holder" style="--width: 285; --height: 336;">
+                    <img src="./assets/images/website-banner-img.png" width="285" height="336" loading="lazy"
+                      alt="Appetizers" class="img-cover">
+                  </figure>
+                </a>
+
+                <div class="card-content">
+
+                  <h3 class="title-4 card-title">
+                    <a href="https://alpssoftware.digital/services/">Design & Development</a>
+                  </h3>
+
+                  <a href="#" class="btn-text hover-underline label-2">Explore More</a>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <a href="https://alpssoftware.digital/services/" class="has-before hover:shine">
+                  <figure class="card-banner img-holder" style="--width: 285; --height: 336;">
+                    <img src="./assets/images/growth.png" width="285" height="336" loading="lazy" alt="Drinks"
+                      class="img-cover">
+                  </figure>
+                </a>
+
+                <div class="card-content">
+
+                  <h3 class="title-4 card-title">
+                    <a href="https://alpssoftware.digital/services/">Hosting & other</a>
+                  </h3>
+
+                  <a href="#" class="btn-text hover-underline label-2">Explore More</a>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+          <img src="./assets/images/shape-1.png" width="246" height="412" loading="lazy" alt="shape"
+            class="shape shape-1 move-anim">
+          <img src="./assets/images/shape-2.png" width="343" height="345" loading="lazy" alt="shape"
+            class="shape shape-2 move-anim">
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about text-center" aria-labelledby="about-label" id="about">
+        <div class="container">
+
+          <div class="about-content">
+
+            <p class="label-2 section-subtitle" id="about-label">Our Story</p>
+
+            <h2 class="headline-1 section-title">Every Solution Tells a Story</h2>
+
+            <p class="section-text">
+              Founded in 2022, ALPS Softwares delivers top-tier digital solutions at affordable prices. Our vision is to
+              empower
+              businesses with innovative technology. Our mission is to provide high-impact services globally, ensuring
+              every client
+              can afford excellence. Our goal is to transform digital experiences with exceptional expertise and
+              affordability.
+            </p>
+
+            <div class="contact-label">Get A Quote</div>
+
+            <a href="tel:+14439988726" class="body-1 contact-number hover-underline">+1 (443) 998 8726</a>
+
+            <a href="#" class="btn btn-primary">
+              <span class="text text-1">Read More</span>
+
+              <span class="text text-2" aria-hidden="true">Read More</span>
+            </a>
+
+          </div>
+
+          <figure class="about-banner">
+
+            <img src="./assets/images/working-people.jpg" width="570" height="570" loading="lazy" alt="about banner"
+              class="w-100" data-parallax-item data-parallax-speed="1">
+
+            <div class="abs-img abs-img-1 has-before" data-parallax-item data-parallax-speed="1.75">
+              <img src="./assets/images/owner-working.jpg" width="285" height="285" loading="lazy" alt="" class="w-100">
+            </div>
+
+
+
+          </figure>
+
+          <!-- <img src="./assets/images/shape-3.png" width="197" height="194" loading="lazy" alt="" class="shape"> -->
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #SPECIAL DISH
+      -->
+
+      <section class="special-dish text-center" aria-labelledby="dish-label">
+
+        <div class="special-dish-banner">
+          <img src="./assets/images/idea.jfif" width="940" height="900" loading="lazy" alt="special dish"
+            class="img-cover">
+        </div>
+
+        <div class="special-dish-content bg-black-10">
+          <div class="container">
+
+            <p class="section-subtitle label-2">Highlights</p>
+
+            <h2 class="headline-1 section-title">Strategic Success Stories</h2>
+
+            <p class="section-text">
+              At ALPS Softwares, we excel in SEO and marketing, crafting tailored strategies to boost your online
+              presence and drive
+              growth.
+            </p>
+
+            <a href="https://alpssoftware.digital/services/" class="btn btn-primary">
+              <span class="text text-1">View All Services</span>
+
+              <span class="text text-2" aria-hidden="true">View All Services</span>
+            </a>
+
+          </div>
+        </div>
+
+        <img src="./assets/images/shape-4.png" width="179" height="359" loading="lazy" alt="" class="shape shape-1">
+
+<!--         <img src="./assets/images/creativity.svg" width="351" height="462" loading="lazy" alt="" class="shape shape-2"> -->
+
+      </section>
+
+
+
+
+
+      <section class="section testi text-center has-bg-image"
+        style="background-image: url('./assets/images/customer-satisfaction.jpg')" aria-label="testimonials" id="client">
+        <div class="container">
+
+          <div class="quote">”</div>
+
+          <p class="headline-2 testi-text">
+            ALPS crafted a stunning, user-friendly site for our jewelry business with exceptional detail.
+          </p>
+
+          <div class="wrapper">
+            <div class="separator"></div>
+            <div class="separator"></div>
+            <div class="separator"></div>
+          </div>
+
+          <div class="profile">
+            <img src="./assets/images/sara-commer.jpg" width="100" height="100" loading="lazy" alt="Sam Jhonson"
+              class="img">
+
+            <p class="label-2 profile-name">Sara<a href="https://www.saracommers.com/">SARA COMMERS PRIVATE
+                JEWELERS</a></p>
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #RESERVATION
+      -->
+
+      <section class="reservation" id="contact">
+        <div class="container">
+
+          <div class="form reservation-form bg-black-10">
+
+            <form id="contactForm" class="form-left"  method="">
+                <h2 class="headline-1 text-center">Contact US</h2>
+                <p class="form-text text-center">
+                  Call AT <a href="tel:+14439988726" class="link">+1 (443) 998 8726</a>
+                  or fill out the form
+                </p>
+                <div class="input-wrapper">
+                  <input type="text" name="name" placeholder="Your Name" autocomplete="off" class="input-field" required>
+                  <input type="email" name="email" placeholder="Email" autocomplete="off" class="input-field" required>
+                </div>
+                <div class="input-wrapper">
+                  <div class="icon-wrapper">
+                    <ion-icon name="briefcase-outline" aria-hidden="true"></ion-icon>
+                    <select name="service" class="input-field" required>
+                      <option value="">Services</option>
+                      <option value="Marketing/SEO">Marketing/SEO</option>
+                      <option value="Design Development">Design Development</option>
+                      <option value="Hosting">Hosting</option>
+                      <option value="All">All</option>
+                    </select>
+                    <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
+                  </div>
+                </div>
+                <div class="input-wrapper">
+                  <input type="text" name="company" placeholder="Business Name" autocomplete="off" class="input-field">
+                  <input type="tel" name="phone" placeholder="Phone Number" autocomplete="off" class="input-field">
+                </div>
+                <textarea name="message" placeholder="Message" autocomplete="off" class="input-field" required></textarea>
+                <input type="submit" value="Submit" class="btn btn-secondary">
+                <!-- Message container -->
+                <div id="formMessage" class="form-message"></div>
+            </form>
+
+
+
+
+
+            <div class="form-right text-center" style="background-image: url('./assets/images/form-pattern.png')">
+
+              <h2 class="headline-1 text-center">Contact Us</h2>
+
+              <p class="contact-label">Email us</p>
+
+              <a href="tel:+14439988726" class="body-1 contact-number hover-underline">contact@alpssoftware.digital</a>
+
+              <div class="separator"></div>
+
+              <p class="contact-label">United States</p>
+
+              <address class="body-4">
+                5900 Balcones Drive Austin,TX 78731
+              </address>
+
+              <p class="contact-label">Germany</p>
+
+              <address class="body-4">
+                Viktualienmarkt, 80331 Munich
+              </address>
+
+              <p class="contact-label">India</p>
+
+              <address class="body-4">
+                C106 Green Park Dapodi Pune, 411012 MH
+
+              </address>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #FEATURES
+      -->
+
+      <section class="section features text-center" aria-label="features">
+        <div class="container">
+
+          <p class="section-subtitle label-2">Why Choose Us</p>
+
+          <h2 class="headline-1 section-title">Our Strength</h2>
+
+          <ul class="grid-list">
+
+            <li class="feature-item">
+              <div class="feature-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/customer.png" width="100" height="80" loading="lazy" alt="icon">
+                </div>
+
+                <h3 class="title-2 card-title">Value Clients</h3>
+
+                <p class="label-1 card-text">Clients are our priority in every step we take.</p>
+
+              </div>
+            </li>
+
+            <li class="feature-item">
+              <div class="feature-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/medal.png" width="100" height="80" loading="lazy" alt="icon">
+                </div>
+
+                <h3 class="title-2 card-title">Awarded</h3>
+
+                <p class="label-1 card-text">Recognized and awarded by clients for excellence.</p>
+
+              </div>
+            </li>
+
+            <li class="feature-item">
+              <div class="feature-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/freelance.png" width="100" height="80" loading="lazy" alt="icon">
+                </div>
+
+                <h3 class="title-2 card-title">Skilled Developers</h3>
+
+                <p class="label-1 card-text">Experienced developers delivering exceptional digital solutions.</p>
+
+              </div>
+            </li>
+
+            <li class="feature-item">
+              <div class="feature-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/international.png" width="100" height="80" loading="lazy" alt="icon">
+                </div>
+
+                <h3 class="title-2 card-title">Global Presence</h3>
+
+                <p class="label-1 card-text">Global presence with a commitment to excellence.</p>
+
+              </div>
+            </li>
+
+          </ul>
+
+<!--           <img src="./assets/images/ideas.svg" width="208" height="178" loading="lazy" alt="shape"
+            class="shape shape-1"> -->
+
+<!--           <img src="./assets/images/like-comment.png" width="120" height="115" loading="lazy" alt="shape"
+            class="shape shape-2"> -->
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #EVENT
+      -->
+
+      <section class="section event bg-black-10" aria-label="event">
+        <div class="container">
+
+          <p class="section-subtitle label-2 text-center">Recent Updates</p>
+
+          <h2 class="section-title headline-1 text-center">Resources</h2>
+
+          <ul class="grid-list">
+
+            <li>
+              <a href="./blog/do-i-need-a-website-for-my-small-business">
+              <div class="event-card has-before hover:shine">
+
+                <div class="card-banner img-holder" style="--width: 350; --height: 450;">
+                  <img src="./assets/images/website-for-business.jpg" width="350" height="450" loading="lazy"
+                    alt="Flavour so good you’ll try to eat with your eyes." class="img-cover">
+
+                  <time class="publish-date label-2" datetime="2023-11-15">15/11/2023</time>
+                </div>
+
+                <div class="card-content">
+                  <p class="card-subtitle label-2 text-center">Blog</p>
+
+                  <h3 class="card-title title-2 text-center">
+                    Do I need a website for my small business?
+                  </h3>
+                </div>
+
+              </div>
+            </a>
+            </li>
+
+        <li>
+              <a href="./blog/why-restaurants-must-go-digital">
+              <div class="event-card has-before hover:shine">
+
+                <div class="card-banner img-holder" style="--width: 350; --height: 450;">
+                  <img src="./assets/images/restaurant.png" width="350" height="450" loading="lazy"
+                    alt="Flavour so good you’ll try to eat with your eyes." class="img-cover">
+
+                  <time class="publish-date label-2" datetime="2024-01-08">08/01/2024</time>
+                </div>
+
+                <div class="card-content">
+                  <p class="card-subtitle label-2 text-center">Case Study</p>
+
+                  <h3 class="card-title title-2 text-center">
+                    Why Restaurants Must Go Digital
+                  </h3>
+                </div>
+
+              </div>
+            </a>
+            </li>
+
+            <li>
+              <a href="./blog/transforming-traditional-to-modern-SHWASH-Remarkable-Business-Growth">
+                <div class="event-card has-before hover:shine">
+
+                  <div class="card-banner img-holder" style="--width: 350; --height: 450;">
+                    <img src="./assets/images/carwash.jpeg" width="350" height="450" loading="lazy"
+                      alt="Flavour so good you’ll try to eat with your eyes." class="img-cover">
+
+                    <time class="publish-date label-2" datetime="2024-03-23">23/03/2024</time>
+                  </div>
+
+                  <div class="card-content">
+                    <p class="card-subtitle label-2 text-center">Client Story</p>
+
+                    <h3 class="card-title title-2 text-center">
+                      Transforming Traditional to Modern: Fullerton Car Wash Digital Overhaul.
+                    </h3>
+                  </div>
+
+                </div>
+              </a>
+            </li>
+
+          </ul>
+
+          <a href="#" class="btn btn-primary">
+            <span class="text text-1">View Our Blog</span>
+
+            <span class="text text-2" aria-hidden="true">View Our Blog</span>
+          </a>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer section has-bg-image text-center"
+    style="background-image: url('./assets/images/world.jpg')">
+    <div class="container">
+
+      <div class="footer-top grid-list">
+
+        <div class="footer-brand has-before has-after">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/alps-logo-original.svg" width="100" height="50" loading="lazy" alt="grilli home">
+          </a>
+
+          <address class="body-4">
+            5900 Balcones Drive Austin,TX 78731
+          </address>
+
+          <a href="mailto:contact@alpssoftware.digital" class="body-4 contact-link">contact@alpssoftware.digital</a>
+
+          <a href="tel:+14439988726" class="body-4 contact-link">Call at : +14439988726</a>
+
+
+          <div class="wrapper">
+            <div class="separator"></div>
+            <div class="separator"></div>
+            <div class="separator"></div>
+          </div>
+
+          <p class="title-1">Subscribe</p>
+
+          <p class="label-1">
+            Get <span class="span">updates.</span>
+          </p>
+
+          <form action="" class="input-wrapper">
+            <div class="icon-wrapper">
+              <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+
+              <input type="email" name="email_address" placeholder="Your email" autocomplete="off" class="input-field">
+            </div>
+
+            <button type="submit" class="btn btn-secondary">
+              <span class="text text-1">Subscribe</span>
+
+              <span class="text text-2" aria-hidden="true">Subscribe</span>
+            </button>
+          </form>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Blog</a>
+          </li>
+
+          <li>
+            <a href="/clients" class="label-2 footer-link hover-underline">Clients</a>
+          </li>
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Resources</a>
+          </li>
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Join Our Community</a>
+          </li>
+
+          <li>
+            <a href="/privacy-policy" class="label-2 footer-link hover-underline">Privacy</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <a href="https://www.instagram.com/alpssoftware4u/" class="label-2 footer-link hover-underline">Facebook</a>
+          </li>
+
+          <li>
+            <a href="https://www.instagram.com/alpssoftware4u/" class="label-2 footer-link hover-underline">Instagram</a>
+          </li>
+
+          <li>
+            <a href="https://www.linkedin.com/company/alpssoftwares/" class="label-2 footer-link hover-underline">Linkedin</a>
+          </li>
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Youtube</a>
+          </li>
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Google Map</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <p class="copyright">
+          &copy; 2024 ALPS. All Rights Reserved
+        </p>
+
+      </div>
+
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn active" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Collect form data
+    let formData = new FormData(this);
+
+    // Create a query string from the FormData
+    let queryString = new URLSearchParams(formData).toString();
+
+    // Send form data to the server using fetch
+    fetch('https://agilesprint.kesug.com/v1/index.php?' + queryString)
+        .then(response => response.json())
+        .then(data => {
+            // Handle success/error responses
+            let messageContainer = document.getElementById('formMessage');
+            if (data.status === 'success') {
+                messageContainer.innerHTML = '<p class="success-message">' + data.message + '</p>';
+                this.reset(); // Optionally reset the form after submission
+            } else {
+                messageContainer.innerHTML = '<p class="error-message">' + data.message + '</p>';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('formMessage').innerHTML = '<p class="error-message">An error occurred. Please try again.</p>';
+        });
+});
+
+
+</script>
+
+<script>
+    function setCookie(name, value, days) {
+        let expires = "";
+        if (days) {
+            let date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+        let nameEQ = name + "=";
+        let ca = document.cookie.split(';');
+        for(let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    function acceptCookies() {
+        console.log("Cookie consent given");
+        setCookie('cookieConsent', 'true', 365);
+        document.getElementById('cookiePolicy').style.display = 'none';
+    }
+
+    // Check if the cookieConsent cookie is set; if not, show the banner
+    if (getCookie('cookieConsent') !== 'true') {
+        document.getElementById('cookiePolicy').style.display = 'block';
+    }
+</script>
+
+
+
+</body>
+
+</html>
