@@ -1136,7 +1136,7 @@
                         Get <span class="span">updates.</span>
                     </p>
 
-                    <form action="https://formspree.io/f/mzzbqdaa" method="POST" class="input-wrapper">
+                    <form action="https://formspree.io/f/mzzbqdaa" id="subscribe" method="POST" class="input-wrapper">
                         <div class="icon-wrapper">
                             <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
 
@@ -1329,7 +1329,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('contact-us-form'); // Use the form ID
+            const form = document.getElementById('subscribe'); // Use the form ID
             const preloader = document.querySelector('.preload[data-preaload]'); // Select the preloader
 
             form.addEventListener('submit', function (event) {

@@ -753,7 +753,8 @@
                         Get <span class="span">updates.</span>
                     </p>
 
-                    <form action="https://formspree.io/f/mzzbqdaa" method="POST" class="input-wrapper">
+                    <form action="https://formspree.io/f/mzzbqdaa" method="POST" class="input-wrapper"
+                        id="subscribe-form">
                         <div class="icon-wrapper">
                             <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
 
@@ -766,7 +767,9 @@
 
                             <span class="text text-2" aria-hidden="true">Subscribe</span>
                         </button>
+
                     </form>
+                    <div id="subscribeMessage" class="form-message"></div>
 
                 </div>
 
@@ -861,33 +864,42 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-
-            const formData = new FormData(this);
-            const params = new URLSearchParams();
-
-            formData.forEach((value, key) => {
-                params.append(key, value);
-            });
-
-            fetch('https://agilesprint.kesug.com/rohit/?' + params.toString(), {
-                method: 'GET',  // Use 'GET' request
-            })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok ' + response.statusText);
-                    }
-                    return response.json(); // Expect JSON response
-                })
-                .then(result => {
-                    document.getElementById('formMessage').innerHTML = '<p class="success-message">We will reach you soon!</p>';
-                    console.log('Response:', result);
-                })
-                .catch(error => {
-                    document.getElementById('formMessage').innerHTML = '<p class="error-message">There was an error sending the message. Please try again.</p>';
-                    console.error('Error:', error);
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('subscribe-form');
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                const formData = new FormData(form);
+                const formObject = {};
+                formData.forEach((value, key) => {
+                    formObject[key] = value;
                 });
+
+                console.log('Form Data:', formObject);
+                fetch(form.action, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formObject),
+                })
+                    .then((response) => {
+                        if (response.ok) {
+                            console.log('Subscription successful!');
+                            document.getElementById('subscribeMessage').textContent =
+                                'Thank you for subscribing!';
+                            form.reset();
+                        } else {
+                            console.error('Subscription failed:', response.statusText);
+                            document.getElementById('subscribeMessage').textContent =
+                                'There was an error subscribing. Please try again.';
+                        }
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                        document.getElementById('subscribeMessage').textContent =
+                            'There was an error subscribing. Please try again.';
+                    });
+            });
         });
     </script>
 
