@@ -9,23 +9,20 @@
 	<!-- 
     - primary meta tags
   -->
-	<title>ALPS Software - Comprehensive IT Solutions for Your Business</title>
+	<title>ALPS Software - Expert Website Design, SEO, and Digital Marketing Services</title>
 	<meta name="description"
-		content="ALPS Software provides top-notch website design, development, SEO, marketing, and hosting solutions tailored for B2B companies. Transform your online presence with our expert services.">
+		content="ALPS Software offers professional website design, web development, SEO optimization, and digital marketing services to help businesses grow online. Our expert solutions enhance your online visibility, drive traffic, and generate valuable leads. From responsive websites to effective SEO strategies and cloud hosting, we deliver everything you need to succeed in the digital world. Partner with ALPS Software for innovative IT solutions that transform your business and maximize your online potential.">
 	<meta name="keywords"
-		content="ALPS Software, IT Solutions, Website Design, Web Development, SEO Services, Digital Marketing, B2B Lead Generation, Cloud Hosting, PHP, Node.js, Angular, Flutter">
+		content="website design and development agency, SEO services, digital marketing agency, affordable SEO solutions, local web development experts, custom website development services, best web designers">
+
 	<meta name="author" content="ALPS Software">
-	<meta property="og:title" content="ALPS Software - Comprehensive IT Solutions for Your Business">
+	<meta property="og:title" content="ALPS Software - Expert Website Design, SEO, and Digital Marketing">
 	<meta property="og:description"
-		content="Transform your online presence with ALPS Software. We offer expert website design, development, SEO, and marketing services.">
-	<!-- <meta property="og:image" content="URL_to_your_image.jpg"> -->
+		content="ALPS Software offers professional website design, web development, SEO optimization, and digital marketing services to help businesses grow online. Our expert solutions enhance your online visibility, drive traffic, and generate valuable leads. From responsive websites to effective SEO strategies and cloud hosting, we deliver everything you need to succeed in the digital world. Partner with ALPS Software for innovative IT solutions that transform your business and maximize your online potential.">
+	<meta property="og:image" content="./assets/images/alps-logo-original.svg">
 	<meta property="og:url" content="https://www.alpssoftware.digital">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-	<!-- 
-    - favicon
-  -->
 	<link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
 	<!-- 
@@ -277,6 +274,10 @@
 	<style>
 		#pricing div:hover {
 			transform: scale(1.05);
+		}
+
+		#pricing {
+			transition: transform 0.3s ease-in-out;
 		}
 	</style>
 
@@ -1241,8 +1242,8 @@
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 
-<script>
-	document.addEventListener('DOMContentLoaded', function () {
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
 			const form = document.getElementById('subscribe-form');
 			form.addEventListener('submit', function (event) {
 				event.preventDefault();
@@ -1279,55 +1280,55 @@
 					});
 			});
 		});
-</script>
-<script>
-	    		document.addEventListener('DOMContentLoaded', function () {
-						const form = document.getElementById('contact-us-form');
-						const preloader = document.querySelector('.preload[data-preaload]');
-						form.addEventListener('submit', function (event) {
-							event.preventDefault();
-							preloader.style.display = 'flex';
-							const formData = new FormData(form);
-							const formObject = {};
-							formData.forEach((value, key) => {
-								formObject[key] = value;
-							});
+	</script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const form = document.getElementById('contact-us-form');
+			const preloader = document.querySelector('.preload[data-preaload]');
+			form.addEventListener('submit', function (event) {
+				event.preventDefault();
+				preloader.style.display = 'flex';
+				const formData = new FormData(form);
+				const formObject = {};
+				formData.forEach((value, key) => {
+					formObject[key] = value;
+				});
 
-							console.log('Form Data:', formObject);
-							fetch(form.action, {
-								method: 'POST',
-								headers: {
-									'Content-Type': 'application/json',
-								},
-								body: JSON.stringify(formObject),
-							})
-								.then((response) => {
-									preloader.style.display = 'none';
+				console.log('Form Data:', formObject);
+				fetch(form.action, {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify(formObject),
+				})
+					.then((response) => {
+						preloader.style.display = 'none';
 
-									if (response.ok) {
-										console.log('Form submitted successfully!');
-										document.getElementById('formMessage').textContent =
-											'Form submitted successfully!';
-										form.reset();
-									} else {
-										console.error('Form submission failed:', response.statusText);
-										document.getElementById('formMessage').textContent =
-											'There was an error submitting the form. Please try again.';
-									}
-								})
-								.catch((error) => {
-									preloader.style.display = 'none';
+						if (response.ok) {
+							console.log('Form submitted successfully!');
+							document.getElementById('formMessage').textContent =
+								'Form submitted successfully!';
+							form.reset();
+						} else {
+							console.error('Form submission failed:', response.statusText);
+							document.getElementById('formMessage').textContent =
+								'There was an error submitting the form. Please try again.';
+						}
+					})
+					.catch((error) => {
+						preloader.style.display = 'none';
 
-									console.error('Error:', error);
-									document.getElementById('formMessage').textContent =
-										'There was an error submitting the form. Please try again.';
-								});
-						});
+						console.error('Error:', error);
+						document.getElementById('formMessage').textContent =
+							'There was an error submitting the form. Please try again.';
 					});
-</script>
+			});
+		});
+	</script>
 
-<script>
-	function setCookie(name, value, days) {
+	<script>
+		function setCookie(name, value, days) {
 			let expires = "";
 			if (days) {
 				let date = new Date();
@@ -1358,19 +1359,19 @@
 			document.getElementById('cookiePolicy').style.display = 'block';
 		}
 
-</script>
-<script>
-	    document.addEventListener('DOMContentLoaded', function () {
-				const planLinks = document.querySelectorAll('.choose-plan-link');
-				planLinks.forEach(link => {
-					link.addEventListener('click', function (event) {
-						event.preventDefault();
-						const selectedPlan = this.getAttribute('data-plan');
-						window.location.href = `choose-plan.html?chosenPlan=${selectedPlan}`;
-					});
+	</script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const planLinks = document.querySelectorAll('.choose-plan-link');
+			planLinks.forEach(link => {
+				link.addEventListener('click', function (event) {
+					event.preventDefault();
+					const selectedPlan = this.getAttribute('data-plan');
+					window.location.href = `choose-plan.html?chosenPlan=${selectedPlan}`;
 				});
 			});
-</script>
+		});
+	</script>
 
 </body>
 
