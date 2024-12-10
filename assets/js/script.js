@@ -171,146 +171,14 @@ window.addEventListener("mousemove", function (event) {
 
 // Subs Form Submission
 
-<<<<<<< HEAD
 
     // contact us form submission
 
 
-=======
-document.addEventListener('DOMContentLoaded', function () {
-			const form = document.getElementById('subscribe-form');
-			form.addEventListener('submit', function (event) {
-				event.preventDefault();
-				const formData = new FormData(form);
-				const formObject = {};
-				formData.forEach((value, key) => {
-					formObject[key] = value;
-				});
-
-				console.log('Form Data:', formObject);
-				fetch(form.action, {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json',
-					},
-					body: JSON.stringify(formObject),
-				})
-					.then((response) => {
-						if (response.ok) {
-							console.log('Subscription successful!');
-							document.getElementById('subscribeMessage').textContent =
-								'Thank you for subscribing!';
-							form.reset();
-						} else {
-							console.error('Subscription failed:', response.statusText);
-							document.getElementById('subscribeMessage').textContent =
-								'There was an error subscribing. Please try again.';
-						}
-					})
-					.catch((error) => {
-						console.error('Error:', error);
-						document.getElementById('subscribeMessage').textContent =
-							'There was an error subscribing. Please try again.';
-					});
-			});
-		});
-
-    // contact us form submission
-
-    		document.addEventListener('DOMContentLoaded', function () {
-			const form = document.getElementById('contact-us-form');
-			const preloader = document.querySelector('.preload[data-preaload]');
-			form.addEventListener('submit', function (event) {
-				event.preventDefault();
-				preloader.style.display = 'flex';
-				const formData = new FormData(form);
-				const formObject = {};
-				formData.forEach((value, key) => {
-					formObject[key] = value;
-				});
-
-				console.log('Form Data:', formObject); 
-				fetch(form.action, {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json',
-					},
-					body: JSON.stringify(formObject),
-				})
-					.then((response) => {
-						preloader.style.display = 'none';
-
-						if (response.ok) {
-							console.log('Form submitted successfully!');
-							document.getElementById('formMessage').textContent =
-								'Form submitted successfully!';
-							form.reset();
-						} else {
-							console.error('Form submission failed:', response.statusText);
-							document.getElementById('formMessage').textContent =
-								'There was an error submitting the form. Please try again.';
-						}
-					})
-					.catch((error) => {
-						preloader.style.display = 'none';
-
-						console.error('Error:', error);
-						document.getElementById('formMessage').textContent =
-							'There was an error submitting the form. Please try again.';
-					});
-			});
-		});
->>>>>>> 1da8086e38ac971bd33e429c0cb9800e1b0c6868
 
 
     // Cookies
 
-<<<<<<< HEAD
 
 
     // Redirect User to Choose Form
-=======
-    		function setCookie(name, value, days) {
-			let expires = "";
-			if (days) {
-				let date = new Date();
-				date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-				expires = "; expires=" + date.toUTCString();
-			}
-			document.cookie = name + "=" + (value || "") + expires + "; path=/";
-		}
-
-		function getCookie(name) {
-			let nameEQ = name + "=";
-			let ca = document.cookie.split(';');
-			for (let i = 0; i < ca.length; i++) {
-				let c = ca[i];
-				while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-				if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-			}
-			return null;
-		}
-
-		function acceptCookies() {
-			console.log("Cookie consent given");
-			setCookie('cookieConsent', 'true', 365);
-			document.getElementById('cookiePolicy').style.display = 'none';
-		}
-
-		if (getCookie('cookieConsent') !== 'true') {
-			document.getElementById('cookiePolicy').style.display = 'block';
-		}
-
-    // Redirect User to Choose Form
-
-    document.addEventListener('DOMContentLoaded', function () {
-			const planLinks = document.querySelectorAll('.choose-plan-link');
-			planLinks.forEach(link => {
-				link.addEventListener('click', function (event) {
-					event.preventDefault();
-					const selectedPlan = this.getAttribute('data-plan');
-					window.location.href = `choose-plan.html?chosenPlan=${selectedPlan}`;
-				});
-			});
-		});
->>>>>>> 1da8086e38ac971bd33e429c0cb9800e1b0c6868
