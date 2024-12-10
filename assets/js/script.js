@@ -168,3 +168,17 @@ window.addEventListener("mousemove", function (event) {
   }
 
 });
+
+// Subs Form Submission
+
+
+    // contact us form submission
+
+
+
+
+    // Cookies
+
+
+
+    // Redirect User to Choose Form
