@@ -215,6 +215,7 @@
               <span class="span">About Us</span>
             </a>
           </li>
+<<<<<<< HEAD
           <li class="navbar-item">
             <a href="/#pricing" class="navbar-link hover-underline">
               <div class="separator"></div>
@@ -222,6 +223,9 @@
               <span class="span">Pricing</span>
             </a>
           </li>
+=======
+
+>>>>>>> 1da8086e38ac971bd33e429c0cb9800e1b0c6868
           <li class="navbar-item">
             <a href="/clients" class="navbar-link hover-underline">
               <div class="separator"></div>
@@ -670,6 +674,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const form = document.getElementById('subscribe-form');
+<<<<<<< HEAD
       const subscribeMessage = document.getElementById('subscribeMessage');
 
       form.addEventListener('submit', function (event) {
@@ -686,6 +691,17 @@
 
         const formObject = { email_address: email };
 
+=======
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const formObject = {};
+        formData.forEach((value, key) => {
+          formObject[key] = value;
+        });
+
+        console.log('Form Data:', formObject);
+>>>>>>> 1da8086e38ac971bd33e429c0cb9800e1b0c6868
         fetch(form.action, {
           method: 'POST',
           headers: {
@@ -695,6 +711,7 @@
         })
           .then((response) => {
             if (response.ok) {
+<<<<<<< HEAD
               subscribeMessage.textContent = 'Thank you for subscribing!';
               subscribeMessage.style.color = 'green';
               form.style.display = 'none'; // Hide the form
@@ -702,12 +719,27 @@
               console.error('Subscription failed:', response.statusText);
               subscribeMessage.textContent = 'There was an error subscribing. Please try again.';
               subscribeMessage.style.color = 'red';
+=======
+              console.log('Subscription successful!');
+              document.getElementById('subscribeMessage').textContent =
+                'Thank you for subscribing!';
+              form.reset();
+            } else {
+              console.error('Subscription failed:', response.statusText);
+              document.getElementById('subscribeMessage').textContent =
+                'There was an error subscribing. Please try again.';
+>>>>>>> 1da8086e38ac971bd33e429c0cb9800e1b0c6868
             }
           })
           .catch((error) => {
             console.error('Error:', error);
+<<<<<<< HEAD
             subscribeMessage.textContent = 'There was an error subscribing. Please try again.';
             subscribeMessage.style.color = 'red';
+=======
+            document.getElementById('subscribeMessage').textContent =
+              'There was an error subscribing. Please try again.';
+>>>>>>> 1da8086e38ac971bd33e429c0cb9800e1b0c6868
           });
       });
     });
