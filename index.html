@@ -283,78 +283,6 @@
 		}
 	</style>
 
-	<style>
-		/* Chatbot Container */
-		#chatbot {
-			position: absolute;
-			bottom: 20px;
-			right: 20px;
-			height: 100%;
-			width: 1200px;
-			z-index: 1000;
-			display: none;
-			/* Initially hidden */
-			transform: scale(0.5);
-			transform-origin: bottom right;
-		}
-
-		/* Chatbot Header */
-		#chatbot-header {
-			cursor: pointer;
-			background-color: #000000;
-			color: white;
-			padding: 5px;
-			border-radius: 5px 5px 0 0;
-		}
-
-		/* Chatbot Body */
-		#chatbot-body {
-			background-color: rgb(0, 0, 0);
-			border: 1px solid #ff1100;
-			border-top: none;
-			border-radius: 0 0 5px 5px;
-			padding: 5px;
-			font-size: large;
-			font-weight: 100;
-		}
-
-		/* Minimized State */
-		.minimized #chatbot-header {
-			display: none;
-			/* Hide header when minimized */
-		}
-
-		.minimized #chatbot-body {
-			display: none;
-			/* Hide body when minimized */
-		}
-
-		/* Chatbot Toggle Button */
-		.chatbot-toggle {
-			position: fixed;
-			bottom: 80px;
-			right: 20px;
-			background-color: hsl(0, 100%, 50%);
-			color: hsla(0, 3%, 7%, 1);
-			font-size: 22px;
-			width: 50px;
-			height: 50px;
-			border-radius: 50%;
-			display: grid;
-			place-items: center;
-			box-shadow: 0px 0px 25px 0px hsla(0, 0%, 0%, 0.25);
-			transition: 250ms ease;
-			opacity: 1;
-			visibility: visible;
-			z-index: 5;
-		}
-
-		/* Hover Effect for Toggle Button */
-		.chatbot-toggle:is(:hover, :focus-visible) {
-			background-color: rgb(255, 255, 255);
-			color: hsl(0, 100%, 50%);
-		}
-	</style>
 
 </head>
 
@@ -1532,38 +1460,13 @@
 	<!-- 
     - #BACK TO TOP
   -->
-	<div class="chatbot-toggle" id="chatbotToggle">💬</div>
+
 	<a href="#top" class="back-top-btn active" aria-label="back to top" data-back-top-btn>
 		<ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
 	</a>
 
 
-	<div id="chatbot">
-		<div id="chatbot-header">
-			<div style="background-color: #1e1e1e; padding: 15px; border-radius: 10px; text-align: center;"
-				id="minimizeBtn">
-				<h2 class="headline-1 section-title">Starter</h2>
-				<p style="font-size: 4rem; color: #FF0000; margin-bottom: 20px;">
-					Partner with Thrive Internet Marketing Agency and scale your business.
-				</p>
-			</div>
-		</div>
-		<div id="chatbot-body">
-			<form id="contact-us-form" class="form-left" action="https://formspree.io/f/mldekgwn" method="POST"
-				style="font-size: 2rem;">
-				<div class="input-wrapper">
-					<input type="text" name="company" placeholder="Business Name" autocomplete="off"
-						class="input-field">
-					<input type="email" name="email" placeholder="Email" autocomplete="off" class="input-field">
-				</div>
-				<textarea name="message" placeholder="Message" autocomplete="off" class="input-field"></textarea>
-				<button type="submit" class="btn btn-secondary">
-					<span class="text text-1">Submit</span>
-					<span class="text text-2" aria-hidden="true">Submit</span>
-				</button>
-			</form>
-		</div>
-	</div>
+
 
 
 	<!-- 
@@ -1577,38 +1480,6 @@
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-
-	<script>
-		// Toggle Chatbot Visibility
-		document.getElementById('chatbotToggle').addEventListener('click', function () {
-			const chatbot = document.getElementById('chatbot');
-			const chatbotToggle = document.getElementById('chatbotToggle');
-
-			// Remove 'minimized' class and show the chatbot
-			chatbot.classList.remove('minimized');
-			chatbot.style.display = 'block';
-			chatbotToggle.style.display = 'none'; // Hide the toggle button
-		});
-
-		// Minimize Chatbot
-		document.getElementById('minimizeBtn').addEventListener('click', function () {
-			const chatbot = document.getElementById('chatbot');
-			const chatbotToggle = document.getElementById('chatbotToggle');
-
-			// Add 'minimized' class and hide the chatbot
-			chatbot.classList.add('minimized');
-			chatbot.style.display = 'none';
-			chatbotToggle.style.display = 'block'; // Show the toggle button
-		});
-
-		// Form Submit Handler
-		document.getElementById('contact-us-form').addEventListener('submit', function (e) {
-			e.preventDefault();
-			alert('Form submitted!');
-		});
-
-
-	</script>
 
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
