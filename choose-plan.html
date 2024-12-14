@@ -383,6 +383,13 @@
                             <span class="span">About Us</span>
                         </a>
                     </li>
+                    <li class="navbar-item">
+                        <a href="/#pricing" class="navbar-link hover-underline">
+                            <div class="separator"></div>
+
+                            <span class="span">Pricing</span>
+                        </a>
+                    </li>
 
                     <li class="navbar-item">
                         <a href="/clients" class="navbar-link hover-underline">
@@ -452,19 +459,9 @@
                                     class="input-field">
                             </div>
                             <div class="input-wrapper">
-                                <div class="icon-wrapper">
-                                    <ion-icon name="briefcase-outline" aria-hidden="true"></ion-icon>
-                                    <select name="person" class="input-field">
-                                        <option value="">Choose a Service</option>
-                                        <option value="Marketing">Marketing/SEO</option>
-                                        <option value="Design">Design Development</option>
-                                        <option value="Hosting">Hosting</option>
-                                        <option value="All">All</option>
-                                    </select>
-                                    <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
-                                </div>
+
                                 <input type="text" name="chosenPlan" id="chosenPlan" placeholder="Your Plan"
-                                    autocomplete="off" class="input-field">
+                                    autocomplete="off" class="input-field" readonly style="color: red;">
                             </div>
 
                             <div class="input-wrapper">
@@ -761,15 +758,13 @@
                             <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
 
                             <input type="email" name="email_address" placeholder="Your email" autocomplete="off"
-                                class="input-field">
+                                class="input-field" required>
                         </div>
 
                         <button type="submit" class="btn btn-secondary">
                             <span class="text text-1">Subscribe</span>
-
                             <span class="text text-2" aria-hidden="true">Subscribe</span>
                         </button>
-
                     </form>
                     <div id="subscribeMessage" class="form-message"></div>
 
@@ -868,15 +863,22 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const form = document.getElementById('subscribe-form');
+            const subscribeMessage = document.getElementById('subscribeMessage');
+
             form.addEventListener('submit', function (event) {
                 event.preventDefault();
                 const formData = new FormData(form);
-                const formObject = {};
-                formData.forEach((value, key) => {
-                    formObject[key] = value;
-                });
+                const email = formData.get('email_address');
 
-                console.log('Form Data:', formObject);
+                // Check if the email field is empty
+                if (!email) {
+                    subscribeMessage.textContent = 'Please enter a valid email address.';
+                    subscribeMessage.style.color = 'red';
+                    return;
+                }
+
+                const formObject = { email_address: email };
+
                 fetch(form.action, {
                     method: 'POST',
                     headers: {
@@ -886,20 +888,19 @@
                 })
                     .then((response) => {
                         if (response.ok) {
-                            console.log('Subscription successful!');
-                            document.getElementById('subscribeMessage').textContent =
-                                'Thank you for subscribing!';
-                            form.reset();
+                            subscribeMessage.textContent = 'Thank you for subscribing!';
+                            subscribeMessage.style.color = 'green';
+                            form.style.display = 'none'; // Hide the form
                         } else {
                             console.error('Subscription failed:', response.statusText);
-                            document.getElementById('subscribeMessage').textContent =
-                                'There was an error subscribing. Please try again.';
+                            subscribeMessage.textContent = 'There was an error subscribing. Please try again.';
+                            subscribeMessage.style.color = 'red';
                         }
                     })
                     .catch((error) => {
                         console.error('Error:', error);
-                        document.getElementById('subscribeMessage').textContent =
-                            'There was an error subscribing. Please try again.';
+                        subscribeMessage.textContent = 'There was an error subscribing. Please try again.';
+                        subscribeMessage.style.color = 'red';
                     });
             });
         });
@@ -967,11 +968,22 @@
                 const formData = new FormData(form);
                 let isFormValid = true;
 
+                // Check if any required field is empty
                 for (const [key, value] of formData.entries()) {
                     if (!value.trim()) {
                         isFormValid = false;
                         break;
                     }
+                }
+
+                // Email validation using regex (basic email format validation)
+                const email = formData.get('email');
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!email || !emailRegex.test(email)) {
+                    isFormValid = false;
+                    formMessage.textContent = 'Please enter a valid email address.';
+                    formMessage.style.color = 'red';
+                    return;
                 }
 
                 if (!isFormValid) {
@@ -996,30 +1008,30 @@
                     },
                     body: JSON.stringify(formObject),
                 })
-                    .then((response) => {
-                        if (response.ok) {
+                    .then((response) => response.json())
+                    .then((data) => {
+                        if (data.errors) {
+                            formMessage.textContent = data.errors[0].message; // Display errors from Formspree
+                            formMessage.style.color = 'red';
+                        } else if (data.ok) {
                             // Replace the form with a success message
                             form.innerHTML = `
-                            <h2 class="headline-1 text-center">Thank You!</h2>
-                            <p class="form-text text-center">
-                                Your form has been submitted successfully. We will get back to you soon!
-                            </p>
-                        `;
-                            form.style.textAlign = "center"; // Optional: Center-align the message
-                        } else {
-                            formMessage.textContent =
-                                'There was an error submitting the form. Please try again.';
-                            formMessage.style.color = 'red';
+                        <h2 class="headline-1 text-center">Thank You!</h2>
+                        <p class="form-text text-center">
+                            Your form has been submitted successfully. We will get back to you soon!
+                        </p>
+                    `;
+                            form.style.textAlign = "center";
                         }
                     })
                     .catch((error) => {
-                        formMessage.textContent =
-                            'There was an error submitting the form. Please try again.';
+                        formMessage.textContent = 'There was an error submitting the form. Please try again.';
                         formMessage.style.color = 'red';
                     });
             });
         });
     </script>
+
 
 
 

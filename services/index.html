@@ -215,7 +215,13 @@
               <span class="span">About Us</span>
             </a>
           </li>
+          <li class="navbar-item">
+            <a href="/#pricing" class="navbar-link hover-underline">
+              <div class="separator"></div>
 
+              <span class="span">Pricing</span>
+            </a>
+          </li>
           <li class="navbar-item">
             <a href="/clients" class="navbar-link hover-underline">
               <div class="separator"></div>
@@ -664,15 +670,22 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const form = document.getElementById('subscribe-form');
+      const subscribeMessage = document.getElementById('subscribeMessage');
+
       form.addEventListener('submit', function (event) {
         event.preventDefault();
         const formData = new FormData(form);
-        const formObject = {};
-        formData.forEach((value, key) => {
-          formObject[key] = value;
-        });
+        const email = formData.get('email_address');
 
-        console.log('Form Data:', formObject);
+        // Check if the email field is empty
+        if (!email) {
+          subscribeMessage.textContent = 'Please enter a valid email address.';
+          subscribeMessage.style.color = 'red';
+          return;
+        }
+
+        const formObject = { email_address: email };
+
         fetch(form.action, {
           method: 'POST',
           headers: {
@@ -682,20 +695,19 @@
         })
           .then((response) => {
             if (response.ok) {
-              console.log('Subscription successful!');
-              document.getElementById('subscribeMessage').textContent =
-                'Thank you for subscribing!';
-              form.reset();
+              subscribeMessage.textContent = 'Thank you for subscribing!';
+              subscribeMessage.style.color = 'green';
+              form.style.display = 'none'; // Hide the form
             } else {
               console.error('Subscription failed:', response.statusText);
-              document.getElementById('subscribeMessage').textContent =
-                'There was an error subscribing. Please try again.';
+              subscribeMessage.textContent = 'There was an error subscribing. Please try again.';
+              subscribeMessage.style.color = 'red';
             }
           })
           .catch((error) => {
             console.error('Error:', error);
-            document.getElementById('subscribeMessage').textContent =
-              'There was an error subscribing. Please try again.';
+            subscribeMessage.textContent = 'There was an error subscribing. Please try again.';
+            subscribeMessage.style.color = 'red';
           });
       });
     });
