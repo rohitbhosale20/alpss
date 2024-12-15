@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Testimonial Section</title>
+
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+</head>
+
+<body>
+
+    <section class="creative-testimonial--slider">
+        <div class="testimonial-inner" style="background-image: url(https://imgpanda.com/upload/ib/2Tgg58L106.png);">
+            <div class="testimonial-row">
+                <h2 class="testimonial-heading">Trusted by the world's fastest growing companies</h2>
+                <div class="testimonial-wrap">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <!-- Slide 1 -->
+                            <div class="swiper-slide">
+                                <div class="swiper-slide--inner">
+                                    <div class="slide-avatar">
+                                        <img src="https://imgpanda.com/upload/ib/3T9Coa4eFQ.png" alt="">
+                                    </div>
+                                    <div class="testimonial-detail">
+                                        <img src="https://imgpanda.com/upload/ib/07fXcY3EIH.png" alt="Company Logo">
+                                        <p>Their team are easy to work with and helped me make amazing websites in a
+                                            short
+                                            amount of time. Thanks guys for all your hard work. Trust us we looked for a
+                                            very long time.</p>
+                                        <span>Herman miller, Monday</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="swiper-slide">
+                                <div class="swiper-slide--inner">
+                                    <div class="slide-avatar">
+                                        <img src="https://imgpanda.com/upload/ib/EG2hj3Ch4z.png" alt="">
+                                    </div>
+                                    <div class="testimonial-detail">
+                                        <img src="https://imgpanda.com/upload/ib/VUrKtb4s8h.png" alt="Company Logo">
+                                        <p>Their team are easy to work with and helped me make amazing websites in a
+                                            short
+                                            amount of time. Thanks guys for all your hard work. Trust us we looked for a
+                                            very long time.</p>
+                                        <span>Matthew taylor, invision</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 3 -->
+                            <div class="swiper-slide">
+                                <div class="swiper-slide--inner">
+                                    <div class="slide-avatar">
+                                        <img src="https://imgpanda.com/upload/ib/CEnecSuafy.png" alt="">
+                                    </div>
+                                    <div class="testimonial-detail">
+                                        <img src="https://imgpanda.com/upload/ib/qisrv7T2JJ.png" alt="Company Logo">
+                                        <p>Their team are easy to work with and helped me make amazing websites in a
+                                            short
+                                            amount of time. Thanks guys for all your hard work. Trust us we looked for a
+                                            very long time.</p>
+                                        <span>Leonel mooney, Logitech</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next slide-btns"></div>
+                        <div class="swiper-button-prev slide-btns"></div>
+                    </div>
+                </div>
+                <!-- Company details -->
+                <div class="company-details--row">
+                    <div class="company-box">
+                        <div class="company-box-inner">
+                            <div class="company-box-top">
+                                <img src="https://imgpanda.com/upload/ib/4mChImfZu3.png" alt="Company Name">
+                            </div>
+                            <div class="company-box-bottom">
+                                <span>Project management - <strong>275% Growth</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="company-box">
+                        <div class="company-box-inner">
+                            <div class="company-box-top">
+                                <img src="https://imgpanda.com/upload/ib/HT16vu2U3Y.png" alt="Company Name">
+                            </div>
+                            <div class="company-box-bottom">
+                                <span>Team management - <strong>195% Growth</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="company-box">
+                        <div class="company-box-inner">
+                            <div class="company-box-top">
+                                <img src="https://imgpanda.com/upload/ib/HF1zj1kEys.png" alt="Company Name">
+                            </div>
+                            <div class="company-box-bottom">
+                                <span>Secure storage - <strong>235% Growth</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <script>
+        $(document).ready(function () {
+            const swiper = new Swiper('.swiper-container', {
+                loop: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                keyboard: {
+                    enabled: true,
+                    onlyInViewport: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev"
+                },
+                effect: 'slide',
+            });
+        });
+    </script>
+</body>
+
+</html>
