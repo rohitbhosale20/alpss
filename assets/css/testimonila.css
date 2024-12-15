@@ -2,7 +2,7 @@
 
 
         .creative-testimonial--slider {
-            background-image: linear-gradient(to bottom, #f7f7ff, #f4f4fb, #f8f7fc, #fbfbfe, #ffffff);
+            background-image: linear-gradient(to bottom, #0e0d0c, #0e0d0c, #0e0d0c, #0e0d0c, #0e0d0c);
             padding: 50px 0px;
         }
 
@@ -29,16 +29,19 @@
             position: relative;
             overflow: hidden;
             margin-bottom: 6%;
+            margin-top: 10px;
         }
 
         .swiper-slide .swiper-slide--inner {
-            padding-left: 15%;
-            padding-right: 15%;
+            padding-left: 5%;
+            padding-right: 5%;
             display: flex;
             align-items: center;
             column-gap: 50px;
             position: relative;
             overflow-x: hidden;
+            background-color: #ffffff;
+            border-radius: 12px;
         }
 
         .swiper-slide--inner .testimonial-detail img {
