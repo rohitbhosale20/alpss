@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How We Work</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .how-we-work {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #fff;
+        }
+
+        .how-we-work h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .step {
+            position: relative;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+            transition: all 0.3s ease;
+            border: 2px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 180px;
+            cursor: pointer;
+        }
+
+        .step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .step:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .step:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .step:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .step:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .step:nth-child(5) {
+            animation-delay: 1s;
+        }
+
+        .circle {
+            width: 60px;
+            height: 60px;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fas {
+            font-size: 30px;
+        }
+
+        .step:hover .circle {
+            background-color: #fff;
+            color: #3498db;
+        }
+
+        .step:hover p {
+            color: #fff;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+
+    <section class="how-we-work">
+        <h2>How We Work</h2>
+        <div class="process-steps">
+            <div class="step" id="step1">
+                <div class="circle">
+                    <i class="fas fa-user"></i>
+                </div>
+                <p>Client Onboarding</p>
+            </div>
+            <div class="step" id="step2">
+                <div class="circle">
+                    <i class="fas fa-pencil-alt"></i>
+                </div>
+                <p>Requirement Gathering</p>
+            </div>
+            <div class="step" id="step3">
+                <div class="circle">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <p>Design & Development</p>
+            </div>
+            <div class="step" id="step4">
+                <div class="circle">
+                    <i class="fas fa-bug"></i>
+                </div>
+                <p>Testing & QA</p>
+            </div>
+            <div class="step" id="step5">
+                <div class="circle">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <p>Final Delivery</p>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>
